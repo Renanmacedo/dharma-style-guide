@@ -1,0 +1,19 @@
+@mixin toggle-switch-theme($theme) {
+ 
+    $primary: map-get($theme, primary);
+    
+    .dharma-toggle-switch {
+
+        background: #ccc;
+        &:before {
+            background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+        }
+        .dharma-toggle:hover &:before {
+            
+            background: linear-gradient(to bottom, #fff 0%,#fff 100%);
+        }
+        .dharma-toggle-checkbox:checked + & {
+            background:  #335797;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+.dharma-tabs {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  div.dharma-tabs-container {
+    padding: 5px;
+    overflow: hidden;
+  }
+  
+  .dharma-tab-content {
+    display: block;
+    position: relative;
+    animation: fade 400ms cubic-bezier(0.36, 0.15, 0.47, 0.28);
+    margin-top: 16px;
+  }
+  @keyframes fade {
+    to {
+      opacity: 1;
+      transform: translate3d(100px, 0, 0);
+    }
+    from {
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+  
+  a.dharma-tab-item {
+    height: 48px;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px;
+    cursor: pointer;
+  }
+  
+  .dharma-tab-item {
+    background: #ff981b;
+    color: #fff;
+  }
+  .dharma-tab-active:focus {
+    background-color: #ff981b;
+  }
+  
+  .dharma-tab-active:hover {
+    background-color: #ffcc84;
+  }
+  .dharma-tab-item:not(.dharma-tab-active) {
+    color: #ddd;
+  }
+  

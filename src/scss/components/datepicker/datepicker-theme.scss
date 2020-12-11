@@ -1,0 +1,23 @@
+
+@mixin dharma-datepicker-theme($theme){
+
+    $background: map-get($theme, background);
+    $forenground: map-get($theme, foreground);
+    $primary: map-get($theme, primary);
+    $dharma-red: map-get($theme, dharma-red);
+    $dharma-purple: map-get($theme, dharma-purple);
+    .datepicker-content {
+        background: dharma-color($background, card);
+    }
+    .month-header {
+        .month-title {
+            color: dharma-color($primary);
+        }
+    }
+    .short-days {
+        color: dharma-color($forenground);
+    }
+}
+@mixin dharma-datepicker-typograpgy($config) {
+
+}

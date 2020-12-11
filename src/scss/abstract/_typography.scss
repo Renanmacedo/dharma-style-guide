@@ -1,0 +1,50 @@
+
+
+
+@function dharma-typography-keys(
+    $font-size,
+    $line-height: $font-size
+    ,$font-weight: 400
+    ,$font-family: null
+    ,$letter-spacing: normal
+) {
+    @return (
+        font-size: $font-size
+        ,font-weight: $font-weight
+        ,line-height: $line-height
+        ,font-family: $font-family
+        ,letter-spacing: $letter-spacing
+    );
+}
+
+@function dharma-typography-config(
+    $font-family:       'Roboto, Helvetica Neue, sans-serif'
+    ,$title:            dharma-typography-keys(16px, 30px, 500)
+    ,$subheading-1:     dharma-typography-keys(15px, 24px, 400)
+    ,$subheading-2:     dharma-typography-keys(16px, 28px, 400)
+    ,$body-1:           dharma-typography-keys(14px, 20px, 400)
+    ,$button:           dharma-typography-keys(14px, 14px, 500)
+    ,$input:            dharma-typography-keys(inherit, 1.125, 400)
+    
+) {
+
+    $config: (
+        title:          $title
+        ,subheading-1:  $subheading-1
+        ,subheading-2:  $subheading-2
+        ,button:        $button
+        ,body-1:        $body-1
+        ,input:         $input
+    );
+
+    @each $key, $prop in $config {
+        
+        @if(map-get($prop ,font-family) == null) {
+            $new-prop: map-merge($prop, (font-family: $font-family));
+            $config: map-merge($config, ($key: $new-prop));
+        }
+    }
+    @return map-merge($config, (font-family: $font-family));
+
+}
+

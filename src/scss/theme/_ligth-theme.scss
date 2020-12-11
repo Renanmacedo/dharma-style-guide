@@ -1,0 +1,12 @@
+@import "../core/core";
+@import "./pallete";
+
+$orange: dharma-theming($dharma-orange);
+$yellow: dharma-theming($dharma-yellow-orange, 200, 100, 400);
+$red: dharma-theming($dharma-red);
+$purple: dharma-theming($dharma-purple);
+$green: dharma-theming($dharma-green);
+$theme: dharma-ligth-theme($orange, $yellow, $red, $purple, $green);
+
+// include theme
+@include dharma-core-theme($theme);

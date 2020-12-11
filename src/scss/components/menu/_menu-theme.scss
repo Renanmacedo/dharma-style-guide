@@ -1,0 +1,28 @@
+
+
+@mixin dhrma-menu-theme($theme) {
+
+    $background: map-get($theme, background);
+    $forenground: map-get($theme, foreground);
+    $primary: map-get($theme,primary);
+    $secondary: map-get($theme, secondary);
+
+    .dharma-menu-item {
+        background-color: transparent;
+        color: dharma-color($forenground, text);
+        &:hover  {
+            background: dharma-color($background, hovered);
+        }
+    }
+}
+
+@mixin dharma-menu-typography($config) {
+ 
+    .dharma-menu-item {
+        font: {
+            family: dharma-get-font-family($config);
+            size: dharma-get-font-size($config, body-1);
+            weight: dharma-get-font-weight($config, body-1);
+        }
+    }
+}

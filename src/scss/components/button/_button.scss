@@ -1,0 +1,92 @@
+
+$dharma-button-padding: 16px !default;
+$dharma-button-width: 60px !default;
+$dharma-button-border-radius: 4px;
+$dharma-button-line-height: 34px !default;
+$dharma-button-height: 40px !default;
+$dharma-button-icon-roudend: 20em !default;
+@mixin base-button() {
+    outline: 0;
+    text-decoration: none;
+    vertical-align: baseline;
+    border: none;
+    position: relative;
+    color: inherit;
+    cursor: pointer;
+    &:focus
+    ,&:active {
+      outline: 0;
+    }
+}
+@mixin base-button-icon() {
+  line-height: 24px;
+
+}
+
+.dharma-button {
+
+    padding: 0 $dharma-button-padding;
+    line-height: $dharma-button-line-height;
+    border-radius: $dharma-button-border-radius;
+    min-width: $dharma-button-width;
+    display: block;
+    @include base-button;
+    @include dharma-elevation;
+    text-align: center;
+    white-space: nowrap;
+
+    &.dharma-icon-button {
+      width: $dharma-button-height;
+      height: $dharma-button-height;
+      border-radius: $dharma-button-icon-roudend;
+      min-width: 0;
+      box-shadow: none;
+      & > * {
+        vertical-align: middle;
+      }
+      .dharma-wrapper-button-label {
+        dharma-icon {
+          width: 24px;
+          height: 25px;
+        }
+      }
+    }
+    &.dharma-link-button {
+      box-shadow: none;
+    }
+
+    &.dharma-round-button {
+      border-radius: 20px;
+      box-shadow: none;
+    }
+}
+.dharma-wrapper-button-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  dharma-icon {
+    margin-right: 5px;
+  }
+}
+.dharma-button.dharma-button-disabled:disabled {
+  cursor: no-drop;
+  opacity: .5;
+}
+.dharma-button:active,
+.dharma-button:focus {
+  outline: 0;
+}
+.dharma-buttom-ripple.dharma-ripple {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: inherit;
+  position: absolute;
+  pointer-events: none;
+}
+.dharma-button-right-input {
+  position: relative;
+  z-index: 10;
+  margin: -0.1em;
+}

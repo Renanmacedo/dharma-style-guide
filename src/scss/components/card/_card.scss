@@ -1,0 +1,62 @@
+
+$dharma-card-padding: 16px !default;
+$dharma-card-border-radius: 4px !default;
+$dharma-card-header-size: 40px !default;
+
+%dharma-card-content-title-base {
+    display: block;
+    margin-bottom: 8px;
+
+}
+%dharma-card-section-base {
+
+    display: block;
+    margin-bottom: 16px;
+}
+.dharma-card {
+
+    @include dharma-card-elevation;
+    border-radius: $dharma-card-border-radius;
+    display: block;
+    position: relative;
+    .dharma-card-divider-horizontal {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        [dir="rtl"] & {
+            left: auto;
+            right: 0;
+        }
+    }
+}
+
+// HEADER STYLE
+.dharma-card-header {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    .dharma-card-title {
+        @extend %dharma-card-content-title-base;
+    }
+
+    .dharma-card-subtitle {
+        @extend %dharma-card-section-base;
+        margin: .2rem 0;
+    }
+}
+.dharma-card-header-text {
+    display: flex;
+    flex-direction: column;
+    margin: 0 $dharma-card-padding;
+}
+.dharma-card-body {
+    padding: $dharma-card-padding - 10px;
+    display: block;
+}
+
+.dharma-card-fotter {
+    margin-left: -4px;
+    margin-right: -4px;
+    display: block;
+}
+

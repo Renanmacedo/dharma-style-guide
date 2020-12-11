@@ -1,0 +1,38 @@
+
+
+@mixin  dharma-core-typography($config: null) {
+
+    @if($config == null) {
+        $config: dharma-typography-config();
+    }
+
+    @include dharma-card-typograpgy($config);
+    @include dharma-nav-menu-typograpgy($config);
+    @include dharma-button-typography($config);
+    @include dharma-menu-typography($config);
+    @include dharma-nav-menu-typograpgy($config);
+    @include dharma-collapse-typograpgy($config);
+    @include dharma-stepper-typograpgy($config);
+    @include dharma-fields-typography($config);
+}
+
+@mixin dharma-core-theme($theme) {
+
+    @include dharma-nav-menu-theme($theme);
+    @include dharma-sidemenu-theme($theme);
+    @include dharma-button-theme($theme);
+    @include dharma-card-theme($theme);
+    @include dharma-header-theme($theme);
+    @include dharma-radio-theme($theme);
+    @include dharma-form-field-theme($theme);
+    @include dharma-paginator-theme($theme);
+    @include dharma-tab-theme($theme);
+    @include dharma-ripple-theme($theme);
+    @include toggle-switch-theme($theme);
+    @include dharma-progress-theme($theme);
+    @include dhrma-menu-theme($theme);
+    @include dharma-collapse-theme($theme);
+    @include dharma-stepper-theme($theme);
+    @include dharma-datepicker-theme($theme);
+
+}

@@ -1,0 +1,86 @@
+.datepicker-content {
+    border-radius: 5px;
+    width: 270px;
+    padding: 8px;
+    position: relative;
+    display: block;
+    box-shadow: 0px 0px 32px rgba(136, 152, 170, 0.15);
+  }
+  .month-header {
+    padding: 7px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .month-title {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+  .row-month,
+  .row-short-month {
+    display: flex;
+    overflow: hidden;
+  }
+  .row-day-month {
+    flex-direction: column;
+  }
+  .row-day-month {
+    margin: 0 0.9em;
+    padding: 16px;
+  }
+  .short-days {
+    margin: 0 0.4em;
+    padding: 3px;
+    color: #5f5c6b;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+  .dharma-datepicker-menu {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .row-week-day {
+    display: flex;
+    margin: 0 2px;
+    position: relative;
+    box-sizing: border-box;
+    .days-week {
+      margin: 0 0.4em;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 5px;
+      height: 5px;
+      color: #8c8a97;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  }
+  
+  .days-week.day-selected {
+    background-color: #f26d17;
+    color: #fff !important;
+    border-radius: 20em;
+    border: 1px solid #f26d17;
+  }
+  .days-week.today:not(.day-selected) {
+    border: 1px solid #f26d17;
+    border-radius: 20em;
+  }
+  
+  .datepicker-overlay {
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    top: 0px;
+  }

@@ -1,0 +1,117 @@
+@import "../theme/pallete";
+
+$margins: (
+    '-0': 0em
+    ,'-1': 1em
+    ,'-2': 2em
+    ,'-3': 3em
+    ,'-4': 4em
+);
+$sizes : (
+    xs: (
+        height: 100px,
+     width: 100px
+    ),
+    sm: (
+     height: 150px,
+     width: 150px
+    ),
+    md: (
+     height: 250px,
+     width: 250px
+    ),
+    xl: (
+        height: 350px,
+        width:  350px
+    )
+);
+
+.dharma-flex {
+    display: flex !important;
+    flex: 1;
+    &-column {
+        flex-direction: column;
+    }
+}
+
+.dharma-justify{
+    &-center{
+        justify-content: center !important;
+    }
+    &-end {
+        justify-content: flex-end !important;
+    }
+    &-between {
+        justify-content: space-between;
+    }
+    &-around {
+        justify-content: space-around;
+    }
+}
+.dharma-align-center {
+    align-items: center !important;
+}
+.dharma-width-auto {
+    width: auto !important;
+}
+
+@each $modifier, $margin in $margins {
+    .dharma-margin#{$modifier} {
+        margin: $margin !important;
+    }
+    .dharma-margin-top#{$modifier} {
+        margin-top: $margin !important;
+    }
+    .dharma-margin-bottom#{$modifier} {
+        margin-bottom: $margin !important;
+    }
+    .dharma-margin-left#{$modifier} {
+        margin-left: $margin !important;
+    }
+    .dharma-margin-right#{$modifier} {
+        margin-right: $margin !important;
+    }
+}
+@each $modifier, $size in $sizes {
+    .dharma-image-#{$modifier} {
+        height: map_get($size, height);
+        width: map_get($size, width);
+    }
+};
+
+%tempalteTitle {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+.text-description-label {
+    color: map-get($dharma-gray, custom);
+    @extend %tempalteTitle;
+}
+.text-description-sub-label {
+    font-size: 14px;
+    color: map-get($dharma-gray, custom-2);
+}
+.text-description-container {
+    display: block;
+    position: relative;
+    margin: 25px 0;
+}
+
+.text-disabled {
+    color: map-get($dharma-gray, 400);
+}
+
+.dharma-text-title-primary {
+    color: map-get($dharma-orange, 500);
+    @extend %tempalteTitle;
+}
+
+.dharma-overflow-ellipse {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.dharma-text-ellipse {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

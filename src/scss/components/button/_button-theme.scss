@@ -1,0 +1,180 @@
+
+$dharma-button-opacity: .1;
+
+@mixin dharma-button-theme($theme) {
+
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+    $primary: map-get($theme, primary);
+
+    .dharma-button  {
+      background-color: dharma-color($background, card);
+      .button-wrapper-label {
+        color: contrast-color(dharma-color($background, card));
+      }
+
+      .dharma-ripple-element {
+        background-color: currentColor;
+        opacity: .1;
+      }
+      @include button-color($theme);
+      &:disabled {
+        color: dharma-color($background, disabled-button);
+      }
+    }
+
+    .dharma-button.dharma-icon-button {
+      background-color: transparent;
+      @include button-icon-color($theme);
+    }
+    .dharma-button.dharma-round-button {
+      @include button-round-color($theme);
+    }
+    .dharma-button.dharma-link-button {
+      background-color: transparent;
+      @include button-link-color($theme);
+    }
+    .dharma-button:not(.dharma-link-button):active, .dharma-button:not(.dhamra-link-button)focus {
+      outline: 0;
+      @include button-color($theme);
+    }
+}
+@mixin button-icon-color($theme) {
+  $primary: map-get($theme, primary);
+  $yellow: map-get($theme, primary);
+  $dharma-red: map-get($theme, dharma-red);
+  $dharma-purple: map-get($theme, dharma-purple);
+
+  &.dharma-primary {
+    .dharma-ripple-element {
+      background-color: dharma-color($primary, 200);
+      opacity: .4;
+    }
+    .dharma-wrapper-button-label {
+      color: dharma-color($primary);
+    }
+  }
+  &.dharma-red {
+    .dharma-ripple-element {
+      background-color: dharma-color($dharma-red, 200);
+      opacity: .4;
+    }
+    .dharma-wrapper-button-label {
+      color: dharma-color($dharma-red);
+    }
+  }
+  &.dharma-purple {
+    .dharma-ripple-element {
+      background-color: dharma-color($dharma-purple, 200);
+      opacity: .4;
+    }
+    .dharma-wrapper-button-label {
+      color: dharma-color($dharma-purple);
+    }
+  }
+  &.dharma-yellow {
+    .dharma-ripple-element {
+      background-color: dharma-color($yellow, 200);
+      opacity: .4;
+    }
+    .dharma-wrapper-button-label {
+      color: dharma-color($yellow)
+    }
+  }
+}
+@mixin button-link-color($theme) {
+  $primary: map-get($theme, primary);
+  $yellow: map-get($theme, secondary);
+  $dharma-red: map-get($theme, dharma-red);
+  $dharma-purple: map-get($theme, dharma-purple);
+
+  &.dharma-primary {
+    .dharma-wrapper-button-label {
+      color: dharma-color($primary);
+    }
+  }
+  &.dharma-red {
+    .dharma-wrapper-button-label {
+      color: dharma-color($dharma-red);
+    }
+  }
+  &.dharma-purple {
+    .dharma-wrapper-button-label {
+      color: dharma-color($dharma-purple);
+    }
+  }
+  &.dharma-secondary {
+    .dharma-wrapper-button-label {
+      color: dharma-color($primary);
+    }
+  }
+  &.dharma-primary .dharma-ripple-element {
+    background-color: dharma-color($primary, 100);
+    opacity: .4;
+  }
+  &.dharma-red .dharma-ripple-element {
+    background-color: dharma-color($dharma-red, 100);
+    opacity: .4;
+  }
+  &.dharma-purple .dharma-ripple-element {
+    background-color: dharma-color($dharma-purple, 100);
+    opacity: .4;
+  }
+}
+@mixin button-color($theme) {
+
+  $primary: map-get($theme, primary);
+  $yellow: map-get($theme, primary);
+  $dharma-red: map-get($theme, dharma-red);
+  $dharma-purple: map-get($theme, dharma-purple);
+
+  &.dharma-primary {
+    background-color: dharma-color($primary);
+    .dharma-wrapper-button-label {
+      color: contrast-color(dharma-color($primary));
+    }
+  }
+  &.dharma-red {
+    background-color: dharma-color($dharma-red);
+    .dharma-wrapper-button-label {
+      color: contrast-color(dharma-color($dharma-red));
+    }
+  }
+  &.dharma-purple {
+    background-color: dharma-color($dharma-purple);
+    .dharma-wrapper-button-label {
+      color: contrast-color(dharma-color($dharma-purple));
+    }
+  }
+
+  &.dharma-primary .dharma-ripple-element {
+    background-color: dharma-color($primary, 100);
+    opacity: .4;
+  }
+  &.dharma-red .dharma-ripple-element {
+    background-color: dharma-color($dharma-red, 100);
+    opacity: .4;
+  }
+  &.dharma-purple .dharma-ripple-element {
+    background-color: dharma-color($dharma-purple, 100);
+    opacity: .4;
+  }
+}
+@mixin button-round-color($theme) {
+  $primary: map-get($theme, primary);
+  $gray: map-get($theme, gray);
+
+  &.dharma-primary {
+    border: 1px solid dharma-color($gray);
+  }
+}
+@mixin dharma-button-typography($config) {
+
+    .dharma-button {
+        font: {
+            family: dharma-get-font-family($config, button);
+            size: dharma-get-font-size($config, button);
+            weight: dharma-get-font-weight($config, button);
+        }
+    }
+}

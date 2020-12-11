@@ -1,0 +1,40 @@
+table.dharma-table {
+    border-spacing: 0;
+    width: 100%;
+}
+.dharma-table {
+    margin-bottom: 10px;
+    @include xs() {
+        overflow: auto;
+    }
+    tr.dharma-row-header {
+        height: 56px;
+
+        th.dharma-header-cell {
+            @include border-table-base();
+            padding: 0;
+            color: rgba(0,0,0,.54);
+            font-size: 12px;
+            font-weight: 500;
+            text-align: left;
+            &:first-of-type{
+                padding-left: 24px;
+            }
+        }
+    }
+    tr.dharma-row {
+        height: 48px;
+        @include xs() {
+            overflow: auto;
+        }
+        td.dharma-row-cell {
+            @include border-table-base();
+            padding: 0;
+            color: rgba(0,0,0,.87);;
+            font-size: 14px;
+            &:first-of-type {
+                padding-left: 24px;
+            }
+        }
+    }
+}

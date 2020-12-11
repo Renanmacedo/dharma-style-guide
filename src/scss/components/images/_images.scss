@@ -1,0 +1,17 @@
+%dharma-image-base {
+    display: block;
+    margin-left: 5px;
+}
+.dharma-avatar{
+    border-radius: 20em;
+    height: 45px;
+    width: 45px;
+    @extend %dharma-image-base;
+    object-fit: cover;
+    flex-shrink: 0;
+    img {
+        width: 45px;
+        height: 45px;
+        border-radius: 20em;
+    }
+}

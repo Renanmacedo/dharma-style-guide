@@ -1,0 +1,29 @@
+
+
+@mixin dharma-stepper-theme($theme) {
+
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+    $primary: map-get($theme, primary);
+
+    .dharma-stepper-header{ 
+
+        .dharma-stepper-label {
+            color: dharma-color($primary);
+        }
+    }
+
+}
+@mixin dharma-stepper-typograpgy($config) {
+
+    .dharma-stepper-header{ 
+
+        .dharma-stepper-label {
+            font: {
+                family: dharma-get-font-family($config);
+                size: dharma-get-font-size($config, title);
+                weight: dharma-get-font-weight($config, title);
+            }
+        }
+    }
+}

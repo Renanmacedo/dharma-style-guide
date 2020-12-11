@@ -1,0 +1,27 @@
+
+
+
+$collapse-padding:  2px;
+
+%dharma-collapse-base {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+.dharma-collapse-content {
+    @include dharma-elevation();
+    padding: $collapse-padding;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-bottom: .69em;
+}
+div.dharma-collapse-content {
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+.panel-content-spacing {
+    margin: 0 14px;
+    overflow: hidden;
+    text-overflow: ellipsis
+}

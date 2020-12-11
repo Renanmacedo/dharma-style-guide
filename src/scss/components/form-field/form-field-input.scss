@@ -1,0 +1,10 @@
+.dharma-form-input {
+    width: 100%;
+    padding: 5px 10px;
+    border-bottom: solid 2px;
+}
+.dharma-form-input:not(:focus):empty{
+    &::placeholder {
+        opacity: 0;        
+    }
+}

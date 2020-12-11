@@ -1,0 +1,39 @@
+
+@mixin dharma-radio-theme($theme) {
+    
+
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+    $primary: map-get($theme, primary);
+    
+    .dharma-radio input[type=radio]:checked {
+        & + label::before { 
+            content: "\2713";
+            color: #fff;
+            z-index: 1;
+        }
+    }
+    .dharma-radio input[type=radio]:checked {
+        & + label::after {
+            background-color: dharma-color($primary, 500);
+            border: 1px solid dharma-color($primary, 500);
+        }
+    }
+    .dharma-radio input[type=radio] + label,
+    .dharma-checkbox input[type=checkbox] + label  {
+        &::after {
+            border: 1px solid dharma-color($dharma-gray, custom);
+        }
+    }
+    .dharma-checkbox input[type=checkbox]:checked {
+        & + label::before {
+            content: "\2713";
+            color: #fff;
+            z-index: 1;
+        }
+        & + label::after {
+            background-color: dharma-color($dharma-orange, 500);
+            border: 1px solid dharma-color($dharma-orange, 500);
+        }
+    }
+}

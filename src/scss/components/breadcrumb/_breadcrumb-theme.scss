@@ -1,0 +1,7 @@
+@mixin dharma-breadcrumb-theme($theme) {
+    
+    $background: map-get($theme, background);
+    $forenground: map-get($theme, forenground);
+    $primary: map-get($theme, primary);
+
+}

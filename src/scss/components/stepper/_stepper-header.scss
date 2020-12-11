@@ -1,0 +1,56 @@
+.dharma-stepper-header {
+
+    padding: 0 10px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+  }
+  .dharma-stepper-label {
+    min-width: 50px;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  
+  .dharma-label-number {
+    width: 35px;
+    height: 35px;
+    background: #ddd;
+    border-radius: 50%;
+    padding: 10px;
+    position: relative;
+    flex: none;
+    margin-right: 10px;
+    .dharma-label-number-content {
+      display: block;
+      .dharma-label-number-item {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    &.dharma-label-number-active {
+      background-color: #ff981b;
+      color: #fff;
+    }
+    &.dharma-label-number-error {
+      background: #F44336;
+      color: #fff;
+    }
+  }
+  .stepper-label-error {
+    color: #F44336;
+  }
+  .stepper-label-text-error {
+    color: currentColor;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .dharma-label-number-item {
+    font-size: 1em;
+    font-weight: bold;
+  }

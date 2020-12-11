@@ -1,0 +1,8 @@
+{
+    "bundlerOptions": {
+        "entryFile": "src/scss/theme/modern.scss",
+        "outFile": "dist/dharma-theme.scss",
+        "ignoreImports": ["~@angular/.*"],
+        "logLevel": "error"
+    }
+}

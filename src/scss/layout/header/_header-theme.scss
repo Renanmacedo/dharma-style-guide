@@ -1,0 +1,24 @@
+@mixin header-color($color) {
+
+    background: dharma-color($color);
+    color: contrast-color(dharma-color($color));
+}
+
+@mixin dharma-header-theme($theme) {
+
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+    $primary: map-get($theme, primary);
+    $dharma-red: map-get($theme, dharma-red);
+    .dharma-header {
+        background: dharma-color($background, header);
+        color: contrast-color-theme(dharma-color($background, header));
+        &.dharma-primary {
+            @include header-color($primary);
+        }
+        &.dharma-red {
+          @include header-color($dharma-red);
+        }
+
+    }
+}

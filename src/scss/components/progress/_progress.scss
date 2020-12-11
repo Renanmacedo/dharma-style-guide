@@ -1,0 +1,28 @@
+
+.background-no-thumb {
+    background: transparent !important;
+}
+.progress-container {
+    display: flex;
+    margin: .7em;
+    position: relative;
+    background: map-get($dharma-gray, 200);
+    color: map-get($dharma-gray, custom);
+    border-radius: 5px;
+    height: 1rem;
+    
+    .progress-effect {
+        width: 0px;
+        background: #000;
+        color:#fff;
+        border-radius: 5px;
+        animation: width .6s ease;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        vertical-align: baseline;
+    }
+}
+.progress-text-left {
+    margin-right: 10px;
+}

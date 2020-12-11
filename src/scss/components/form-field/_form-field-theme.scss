@@ -1,0 +1,43 @@
+
+
+@mixin  dharma-form-field-theme($theme) {
+
+
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme,  background);
+    $primary: map-get($theme, primary);
+    $gray: map-get($theme, gray);
+    $dharma-red: map-get($theme,dharma-red);
+
+    .dharma-form-field {    
+        .dharma-form-field-label {
+            color: dharma-color($gray);
+
+            &::before
+            ,&::after {
+                color: dharma-color($gray);
+            }
+        }
+        input.dharma-form-input {
+            background-color: transparent;
+            border-bottom-color:  dharma-color($background, default);
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            &:focus {
+                border-top-color: transparent !important;
+                border-left-color: transparent !important;
+                border-right-color: transparent !important;
+            }
+        }
+        &.dharma-form-field-outline {
+            .dharma-form-input {
+                border-color: dharma-color($background, default);
+                border-top-color: transparent;
+                &:not(:focus) {
+                    border-top-color: dharma-color($background, default);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+
+%dharma-nav-menu-border {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+%dharma-nav-menu-base {
+    margin: 0 .29em;
+}
+
+@mixin dharma-nav-menu-theme($theme) {
+
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+    $primary: map-get($theme, primary);
+    $secondary: map-get($theme, secondary);
+
+    .dharma-nav-menu.dharma-primary .dharma-nav-menu-item:hover {
+      dharma-icon
+      ,.dharma-nav-menu-item-label {
+        color: dharma-color($background, sidemenu);
+      }
+    }
+    .dharma-nav-menu .dharma-nav-menu-item:hover {
+      dharma-icon
+      ,.dharma-nav-menu-item-label {
+        color:  dharma-color($primary);
+      }
+    }
+    .dharma-nav-menu .dharma-nav-menu-item.dharma-navitem-active {
+        dharma-icon
+        ,.dharma-nav-menu-item-label {
+          color:  dharma-color($primary);
+        }
+    }
+    .dharma-nav-menu.dharma-primary .dharma-nav-menu-item.dharma-navitem-active{
+      dharma-icon
+      ,.dharma-nav-menu-item-label{
+        color: dharma-color($background,sidemenu);
+      }
+    }
+    .dharma-nav-menu .dharma-wave-menu:not(.dharma-navmenu-open) {
+      dharma-icon
+      ,.dharma-nav-menu-item-label{
+        color: dharma-color($primary);
+      }
+    }
+}
+
+@mixin  dharma-nav-menu-typograpgy($config){
+    .dharma-nav-menu-item-label {
+        font: {
+            family: dharma-get-font-family($config, body-1);
+            size: dharma-get-font-size($config, body-1);
+            weight: dharma-get-font-weight($config, body-1);
+        }
+    }
+}

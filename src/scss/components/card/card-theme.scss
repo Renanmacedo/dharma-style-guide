@@ -1,0 +1,30 @@
+
+
+
+@mixin  dharma-card-theme($theme) {
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+    .dharma-card {
+        background: dharma-color($background, card);
+    }
+}
+@mixin dharma-card-typograpgy($config) {
+
+    .dharma-card {
+        font-family: dharma-get-font-family($config);
+    }
+    .dharma-card-title {
+        font: {
+            family: dharma-get-font-family($config);
+            size: dharma-get-font-size($config, title);
+            weight: dharma-get-font-weight($config, title);
+        }
+    }
+    .dharma-card-subtitle{ 
+        font: {
+            family: dharma-get-font-family($config);
+            size: dharma-get-font-size($config, body-1);
+            weight: dharma-get-font-weight($config, body-1);
+        }
+    }
+}

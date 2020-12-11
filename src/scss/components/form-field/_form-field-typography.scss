@@ -1,0 +1,11 @@
+
+
+@mixin dharma-fields-typography($config) {
+    .dharma-form-field-error {
+        font: {
+            family: dharma-get-font-family($config);
+            size: dharma-get-font-size($config, body-1);
+            weight: dharma-get-font-weight($config, body-1);
+        }
+    }
+}

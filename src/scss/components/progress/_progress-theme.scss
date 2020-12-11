@@ -1,0 +1,51 @@
+@mixin dharma-progress-theme($theme) {
+    
+
+    $primary: map-get($theme, primary);
+    $secondary: map-get($theme, secondary);
+    $dharma-purple: map-get($theme, dharma-purple);
+    $dharma-red: map-get($theme, dharma-red);
+    $dharma-success: map-get($theme, success);
+
+    
+    .dharma-success {
+        .progress-container {
+            .progress-effect {
+                background: map-get(map-get($dharma-success, constract), A400);
+                color: contrast-color(map-get(map-get($dharma-success, constract), A400));
+            }
+        }
+    }
+    .dharma-primary {
+        .progress-container {
+            .progress-effect {
+                background: dharma-color($primary);
+                color: contrast-color(dharma-color($primary))
+            }
+        }
+    }
+    .dharma-purple {
+        .progress-container {
+            .progress-effect {
+                background: dharma-color($dharma-purple);
+                color: contrast-color(dharma-color($dharma-purple))
+            }
+        }
+    }
+    .dharma-red {
+        .progress-container {
+            .progress-effect {
+                background: dharma-color($dharma-red);
+                color: contrast-color(dharma-color($dharma-red))
+            }
+        }
+    }
+    .dharma-secondary {
+        .progress-container {
+            .progress-effect {
+                background: dharma-color($secondary, 400);
+                color: contrast-color(dharma-color($secondary, 400))
+            }
+        }
+    }
+}

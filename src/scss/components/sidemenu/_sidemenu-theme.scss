@@ -1,0 +1,48 @@
+
+
+
+@mixin sidemenu-color($color, $option: null) {
+    // applay option color
+    @if($option == null) {
+        background: dharma-color($color);
+        color: contrast-color(dharma-color($color));
+    }@else {
+        background: dharma-color($color, $option);
+        color: contrast-color(dharma-color($color, $option));
+    }
+}
+
+
+@mixin  dharma-sidemenu-theme($theme) {
+
+    $foreground:  map-get($theme, foreground);
+    $background: map-get($theme, background);
+    $primary: map-get($theme, primary);
+
+    .dharma-sidemenu {
+        .dharma-sidemenu-aside .dharma-sidemenu-inner {
+            @include sidemenu-color($background, sidemenu);
+        }
+
+        // apply theme if color is specific
+        &.dharma-primary {
+            .dharma-sidemenu-aside .dharma-sidemenu-inner {
+                @include sidemenu-color($primary);
+            }
+        }
+    }
+    .dharma-sidemenu-inner.dharma-primary {
+        &::-webkit-scrollbar-thumb {
+            background: dharma-color($primary);
+        }
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+    }
+    .dharma-backdrop-sidemenu {
+      background-color: rgba(0,0,0,.37);
+    }
+    .dharma-overlay-container {
+        background: rgba(0,0,0,.19);
+    }
+}

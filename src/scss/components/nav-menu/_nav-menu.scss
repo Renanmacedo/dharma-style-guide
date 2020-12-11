@@ -1,0 +1,25 @@
+.dharma-nav-menu {
+    margin: .29em 0;
+}
+.dharma-nav-menu-item {
+    height: $list-menu-item-height;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 10px;
+    text-decoration: none;
+    color: currentColor;
+    .dharma-nav-menu-item-label {
+        box-sizing: border-box;
+        flex: 1;
+        padding-left: 5px;
+    }
+}
+.dharma-nav-submenu {
+    padding-left: .48rem;
+}
+.dharma-nav
+.dharma-navmenu-open {
+  padding: 5px;
+}

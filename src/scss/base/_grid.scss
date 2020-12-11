@@ -1,0 +1,85 @@
+
+$grid_cols: 12;
+$dharma-grid-sm: 576;
+$dharma-grid-md: 768;
+$dharma-grid-lg: 992;
+$dharma-grid-xl: 1200;
+
+$map-grid-props: (
+    '': 0
+    ,'-sm': $dharma-grid-sm
+    ,'-md': $dharma-grid-md
+    ,'-lg': $dharma-grid-lg
+    ,'-xl': $dharma-grid-xl
+);
+
+%dharma-grid-row-base {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap; 
+} 
+%dharma-grid-column-base {
+    display: flex;
+    flex-direction: column;
+}
+@mixin create-classes-grid($modifier, $grid-cols, $breakpoint) {
+    @include create-grid-media($breakpoint) {
+        @for $i from 1 through $grid-cols {
+            @if($modifier == '') {
+                $modifier: '-xs';
+            }
+            &-col-#{$modifier}-offset-0 {
+                margin-left: 0;
+                padding: 10px;
+
+            }
+
+            &-col#{$modifier}-#{$i} {
+                flex-basis: (100 / ( $grid-cols / $i )) * 1%;
+                width: (100 / ( $grid-cols / $i )) * 1%;
+                padding: 10px;
+            }
+
+            &-col#{$modifier}-offset-#{$i} {
+                margin-left: (100 / ($grid-cols / $i )) * 1%;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            &-col#{$modifier}-offsetY-#{$i} {
+                margin-top: (100 / ($grid-cols / $i )) * 1%;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        } 
+    }
+}
+
+.dharma-grid {
+    
+    margin: 0;
+    box-sizing: border-box;
+    padding: 5px;
+    &-fluid {
+        max-width: 100%;
+    }
+    &-row {
+        @extend %dharma-grid-row-base;
+    }
+    &-row-center {
+        justify-content: center;
+        align-items: center;
+    }
+    &-column {
+        @extend %dharma-grid-column-base;
+    }
+}
+.dharma {
+    @each $modifier, $breakpoint in $map-grid-props {
+        @include create-classes-grid($modifier, $grid_cols, $breakpoint);
+    }   
+}
+   
+
+
+
+

@@ -1,0 +1,15 @@
+
+
+@mixin dharma-paginator-theme($theme) {
+
+  $background: map-get($theme, background);
+  $forenground: map-get($theme, forenground);
+  $primary:  map-get($theme, primary);
+
+  li.dharma-pagination-active {
+    background-color: dharma-color($primary);
+    button > .dharma-wrapper-button-label {
+      color: contrast-color(dharma-color($primary));
+    }
+  }
+}

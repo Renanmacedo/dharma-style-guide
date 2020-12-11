@@ -1,0 +1,29 @@
+
+.steppers-horizontal {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    position: relative;
+    overflow: scroll;
+}
+.line {
+    height: 0;
+    border-top-style: solid;
+    border-top-width: 1px;
+    min-width: 30px;
+    border-top-color: rgba(0, 0, 0, 0.12);
+    margin-left: 5px;
+    display: flex;
+    margin-right: 9px;
+}
+.dharma-steppers-horizontal {
+    display: block;
+}
+  
+.stepper-content {
+    margin-top: -22px;
+}
+  
+.stepper-item {
+    padding: 0 24px;
+  }

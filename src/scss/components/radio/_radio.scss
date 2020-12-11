@@ -1,0 +1,87 @@
+
+
+.dharma-radio input[type=radio]
+,.dharma-checkbox input[type=checkbox] {
+    display: none !important;
+    
+}
+.dharma-checkbox input[type=checkbox] + label
+,.dharma-radio input[type=radio] + label {
+    position: relative;
+    padding-left: 40px;
+    cursor: pointer;
+    display: inline-block;
+}
+.dharma-radio input[type=radio] {
+    & + label::before {
+        content: "";
+        width: 16px;
+        height: 16px;
+        top: 5px;
+        left: 8px;
+        position: absolute;
+        border-radius: 2em;
+        display: inline-block;
+    }
+    &:checked + label::before, &:checked + label::after {
+        animation: animateChecked .5s  linear;
+    }
+    & + label::after {
+        content: "";
+        border-radius: 50em;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        left: 2px;
+        top: 2px;
+    }
+}
+
+.dharma-checkbox input[type=checkbox] + label {
+    &::before {
+        content: "";
+        position: absolute;
+        border-radius: .4em;
+        display: inline-block;
+        top: -5px;
+        left: 2px;
+    }
+    &.size-lg::before {
+        width: 16px;
+        height: 16px;
+        top: 4px;
+        left: 4px;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        border-radius: 20em;
+        width: 15px;
+        height: 15px;
+        top: -3px;
+        left: 0;
+    }
+    &.size-lg::after {
+        width: 20px;
+        height: 20px;
+        top: 4px;
+        left: 0;
+    }
+}
+.dharma-checkbox input[type=checkbox]:checked + label {
+    &::after,
+    &::before {
+        animation: animateChecked .5s  linear;
+    }
+}
+@keyframes animateChecked {
+
+    from {
+        transform: scale(.8) translateY(-10px);
+        opacity: .7;
+    }
+    to {
+        transform: scale(1) translateY(0px);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,44 @@
+@import '../../core/menu-common';
+
+$dharma-menu-padding: 8px !default;
+
+$dharma-menu-border-radius: 4px !default;
+.dharma-menu-panel {
+    
+    @include menu-base();
+
+    /** calculate max height */
+
+    max-height: calc(100vh - 48px);
+    border-radius: $dharma-menu-border-radius;
+
+    outline: 0;
+
+    min-height: 64px;
+
+    background: #fff;
+    @include dharma-elevation;
+}
+
+.dharma-menu-content:not(:empty) {
+    padding: $dharma-menu-padding 0;
+    position: relative;
+    width: auto;
+}
+.dharma-menu-item {
+    @include menu-item-base;
+    position: relative;
+    &:focus
+    ,&:active {
+        outline: 0;
+        border: none;
+    }
+    dharma-icon {
+        vertical-align: middle;
+        margin-right: 15px;
+    }
+}
+button.dharma-menu-item {
+
+    width: 100%;
+}

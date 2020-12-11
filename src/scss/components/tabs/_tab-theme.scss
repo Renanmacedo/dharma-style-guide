@@ -1,0 +1,11 @@
+
+
+@mixin  dharma-tab-theme($theme) {
+    
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+    $primary: map-get($theme, primary);
+    $dharma-purple: map-get($theme, dharma-purple);
+    $dharma-red: map-get($theme, dharma-red);
+
+}

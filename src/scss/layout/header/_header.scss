@@ -1,0 +1,33 @@
+
+.dharma-header-fixed {
+    display: flex;
+    flex-grow: 1;
+    position: fixed
+}
+
+.dharma-header {
+    height: $header-height;
+    width: 100%;
+    
+}
+.dharma-header-row {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    padding: 0 16px;
+
+    .dharma-sidemenu-button {
+        @include xs() {
+            display: block;
+        }
+        @include sm() {
+            display: block;
+        }
+        @include md() {
+            display: block;
+        }
+        @include lg() {
+            display: block;
+        }
+    }
+}

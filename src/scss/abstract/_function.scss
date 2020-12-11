@@ -1,0 +1,80 @@
+@import "../theme/pallete";
+
+$default: null;
+/**
+ return rgb the colors based lumance color and aplha contrast
+*/
+@function lumance($themeColor){
+    $red: nth($linear-channel-values, red($themeColor) + 1 );
+    $green: nth($linear-channel-values, green($themeColor) + 1);
+    $blue: nth($linear-channel-values, blue($themeColor) +1);
+    @return .2126 * $red + .7152 * $green + .0722 * $blue;
+}
+// return ratios
+@function contrast-ratio($back, $front){
+    $backLum: lumance($back) + .4;
+    $foreLum: lumance($front) + .5;
+    @return max($backLum, $foreLum) / min($backLum, $foreLum);
+}
+
+@function contrast-color($themeColor) {
+    $lightColor: contrast-ratio($themeColor, white);
+    $darkColor: contrast-ratio($themeColor, black);
+    @if ( $lightColor > $darkColor ) {
+        @return white;
+    }
+    @else{
+        @return black;
+    }
+}
+//
+@function dharma-theming($base-theme, $default: 500, $light: 300, $darker: 900, $text: $default) {
+
+    $new-theming: map-merge($base-theme, (
+        base: map-get($base-theme, $default)
+        ,light: map-get($base-theme, $light)
+        ,dark: map-get($base-theme, $darker)
+        ,text: map-get($base-theme, $text)
+    ));
+    @return $new-theming;
+}
+
+// return color if pass prop the component or element
+// $position is the hue the color
+@function dharma-color($prop, $position: base, $opacity: null) {
+
+    $color: map-get($prop, $position);
+
+    @if(type-of($color) != color) {
+        // previne an erro scss compile if the $color is not apply
+        @return $color;
+    }
+    @return rgba($color, if($opacity == null, opacity($color), $opacity));
+}
+
+// return light theming
+@function dharma-ligth-theme($primary, $secondary, $red, $purple, $success: null) {
+
+    @return (
+        primary: $primary,
+        secondary: $secondary,
+        dharma-red: $red,
+        dharma-purple: $purple,
+        background: $dharma-theme-light-background,
+        foreground: $dharma-theme-light-foreground,
+        success: $success,
+        gray: dharma-theming($dharma-gray)
+    );
+}
+
+@function dharma-dark-theme($primary, $secondary, $red, $purple, $success: null) {
+    @return (
+        primary: $primary,
+        secondary: $secondary,
+        dharma-red: $red,
+        dharma-purple: $purple,
+        background: $dharma-theme-dark-background,
+        foreground: $dharma-theme-dark-foreground,
+        success: $success
+    )
+}

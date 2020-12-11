@@ -1,0 +1,62 @@
+@mixin  dharma-elevation() {
+
+    box-shadow:
+     0px 1px 1px 0px rgba(0, 0, 0, 0.1), 
+     0px 3px 10px -3px rgba(0, 0, 0, 0.18), 
+     1px 2px 4px -2px rgba(0, 0, 0, 0.18);
+}
+
+$collapse-header-height: 65px;
+$collapse-padding: 0 16px;
+
+%dharma-header-base {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+
+dharma-collapse-header.dharma-collapse-header  {
+    @extend %dharma-header-base;
+}
+.dharma-header-content {
+    @extend %dharma-header-base;
+    padding: $collapse-padding;
+    position: relative;
+}
+.dharma-collapse-header {
+    min-height: $collapse-header-height;
+    cursor: pointer;
+
+    @include dharma-elevation();
+}
+
+.dharma-collapse-header-title,
+.dharma-collapse-header-description {
+  display: flex;
+  flex: 1;
+  margin-right: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dharma-collapse-header-title {
+    font-size: 1.1em;
+    font-weight: 500;
+
+}
+.dharma-collapse-header-description {
+  flex: 1;
+}
+.dharma-collapse-indicator {
+    margin: 0 16px 0 0;
+    padding: 10px;
+    &::after {
+        content: "";
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 2px;
+        border-style: solid;
+        vertical-align: middle;
+        transform: rotate(45deg);
+    }
+}

@@ -1,0 +1,52 @@
+
+.dharma-select-trigger {
+    padding: .12em;
+}
+.dharma-select { 
+    display: inline-block;
+    width: 100%;
+    outline: none;
+    margin-top: -0.3449em;
+}
+.dharma-select-value {
+    display: table-cell;
+    min-width: 0;
+    width: 100%;
+
+
+}
+.dharma-form-field-type-select {
+    &:not(.dharma-form-field-disabled) .dharma-form-field-flex {
+        cursor: pointer;
+    }
+}
+.dharma-select-value-text {
+    padding: 0 .4356em;
+}
+.dharma-select-arrow-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+    .dharma-select-arrow {
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid;
+        margin: 0 5px;
+    }
+}
+.dharma-select-panel-wrap {
+ 
+    flex-basis: 100%;
+}
+.dharma-select-panel {
+
+    background: #fff;
+    padding-top: 0;
+    padding-bottom: 0; 
+    max-height: 254px;
+    border-radius: 5px; 
+    overflow: scroll;
+    @include dharma-elevation;
+
+}

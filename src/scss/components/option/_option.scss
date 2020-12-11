@@ -1,0 +1,19 @@
+
+
+.dharma-option  {
+        height: 3em;
+        line-height: 3em;
+        font-size: inherit;
+        padding: 0 1.5em;
+        cursor: pointer;
+        display: flex;
+        overflow: hidden;
+        outline: none;
+        text-align: left;
+        box-sizing: border-box;
+}
+.dharma-option-text {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

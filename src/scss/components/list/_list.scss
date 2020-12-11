@@ -1,0 +1,29 @@
+
+.flex-items {
+    display: flex;
+    flex: 1 0 auto;
+
+}
+
+.dharma-list {
+    padding: 2px;
+}
+
+.dharma-list-items, .dharma-list-item {
+    height: 44px;
+}
+.dharma-list-item {
+    @extend .flex-items;
+    align-items: center;
+    padding: 3px;
+    margin: .5em 0;
+    border-bottom: .1px solid #ececec; 
+    cursor: pointer;
+    .dharma-list-item-label {
+        flex: 1;
+        box-sizing: border-box;
+        @include font-size(1rem, 400);
+    }
+    i { padding-right: 15px }
+
+}

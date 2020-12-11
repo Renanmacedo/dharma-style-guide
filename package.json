@@ -1,0 +1,23 @@
+{
+  "name": "dharma-style-guide",
+  "version": "1.0.0",
+  "description": "A guide style to create platform",
+  "main": "index.js",
+  "homepage": "https://www.npmjs.com/package/dharma-style-guide",
+  "scripts": {
+    "compile-scss": "scss-bundle -c scss-bundle.config.json",
+    "compile-css": "node-sass ./src/scss/theme/modern.scss  ./dist/dharma-theme.css"
+  },
+  "keywords": [
+    "style",
+    "dahrma-style"
+  ],
+  "author": "Renan Aquino <renan.aquinolima@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "create-scss": "^2.6.1",
+    "node-sass": "^5.0.0",
+    "scss-bundle": "^3.1.2"
+  }
+}
