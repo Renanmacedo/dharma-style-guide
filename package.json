@@ -4,6 +4,11 @@
   "description": "A guide style to create platform",
   "main": "index.js",
   "homepage": "https://www.npmjs.com/package/dharma-style-guide",
+  "repository": {
+    "url": "https://github.com/Renanmacedo/dharma-style-guide/",
+    "type": "git",
+    "directory": "dharma-style-guide"
+  },
   "scripts": {
     "compile-scss": "scss-bundle -c scss-bundle.config.json",
     "compile-css": "node-sass ./src/scss/theme/modern.scss  ./dist/dharma-theme.css"
