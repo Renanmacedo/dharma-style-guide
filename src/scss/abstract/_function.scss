@@ -53,7 +53,12 @@ $default: null;
 }
 
 // return light theming
-@function dharma-ligth-theme($primary, $secondary, $red, $purple, $success: null) {
+@function dharma-ligth-theme(
+        $primary
+        , $secondary: $dharma-blue
+        , $red: $dharma-red
+        , $purple: $dharma-purple
+        , $success: null) {
 
     @return (
         primary: $primary,

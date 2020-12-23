@@ -17,7 +17,28 @@ After run the install package, is possible use the style into your project angul
 ```scss
 @import "~node_modules/dharma-style-guide/dharma-theme";
 ```
- 
+## Custom you theme
+ You can be customize theme default the **dharma-style-guide**
+ To customize the theme, is necessary the declaration the function.
+ **Is possible only in file scss or sass**
+ ```scss
+  $orange: (
+      50: orangeCustomColor
+      ,100: orangeCustomColor
+      ,200: orangeCustomColor
+      ,300: orangeCustomColor
+      ,400: orangeCustomColor
+      ,500: orangeCustomColor 
+      ,600: orangeCustomColor
+      ,700: orangeCustomColor
+      ,800: orangeCustomColor
+      ,800: orangeCustomColor
+      ,900: orangeCustomColor
+
+  );
+  $theme: dharma-ligth-theme($orange);
+  @include dharma-core-theme($theme);
+ ```
 
 ## Style Component
  - [Dharma Buttons](https://guides.github.com/features/mastering-markdown/)
