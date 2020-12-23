@@ -33,14 +33,13 @@ $map-grid-props: (
                 padding: 10px;
 
             }
-
             &-col#{$modifier}-#{$i} {
                 flex-basis: (100 / ( $grid-cols / $i )) * 1%;
                 width: (100 / ( $grid-cols / $i )) * 1%;
                 padding: 10px;
             }
 
-            &-col#{$modifier}-offset-#{$i} {
+            &-col#{$modifier}-offsetX-#{$i} {
                 margin-left: (100 / ($grid-cols / $i )) * 1%;
                 padding-left: 10px;
                 padding-right: 10px;

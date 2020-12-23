@@ -7,24 +7,7 @@ $margins: (
     ,'-3': 3em
     ,'-4': 4em
 );
-$sizes : (
-    xs: (
-        height: 100px,
-     width: 100px
-    ),
-    sm: (
-     height: 150px,
-     width: 150px
-    ),
-    md: (
-     height: 250px,
-     width: 250px
-    ),
-    xl: (
-        height: 350px,
-        width:  350px
-    )
-);
+
 
 .dharma-flex {
     display: flex !important;
@@ -71,47 +54,4 @@ $sizes : (
     .dharma-margin-right#{$modifier} {
         margin-right: $margin !important;
     }
-}
-@each $modifier, $size in $sizes {
-    .dharma-image-#{$modifier} {
-        height: map_get($size, height);
-        width: map_get($size, width);
-    }
-};
-
-%tempalteTitle {
-    font-size: 1.4em;
-    font-weight: 600;
-}
-.text-description-label {
-    color: map-get($dharma-gray, custom);
-    @extend %tempalteTitle;
-}
-.text-description-sub-label {
-    font-size: 14px;
-    color: map-get($dharma-gray, custom-2);
-}
-.text-description-container {
-    display: block;
-    position: relative;
-    margin: 25px 0;
-}
-
-.text-disabled {
-    color: map-get($dharma-gray, 400);
-}
-
-.dharma-text-title-primary {
-    color: map-get($dharma-orange, 500);
-    @extend %tempalteTitle;
-}
-
-.dharma-overflow-ellipse {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-.dharma-text-ellipse {
-    overflow: hidden;
-    text-overflow: ellipsis;
 }

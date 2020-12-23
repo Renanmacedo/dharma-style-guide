@@ -39,6 +39,7 @@ After run the install package, is possible use the style into your project angul
   $theme: dharma-ligth-theme($orange);
   @include dharma-core-theme($theme);
  ```
+## Custom you typography
 
 ## Style Component
  - [Dharma Buttons](https://guides.github.com/features/mastering-markdown/)
@@ -49,4 +50,3 @@ After run the install package, is possible use the style into your project angul
  - [Dharma Tables](https://guides.github.com/features/mastering-markdown/)
  - [Dharma Toggle Switch](https://guides.github.com/features/mastering-markdown/)
  - [Dharma Utils Classes](https://guides.github.com/features/mastering-markdown/)
-
